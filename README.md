@@ -219,3 +219,27 @@ Contains user-generated reviews and ratings for properties.
 - **Booking ↔ Payment**: One-to-One (Each booking can have one payment)
 
 ---
+## 🛠️ Main Features
+
+### 👤 User Management
+Handles user registration, login, and profile management. This feature ensures secure access control and allows both guests and hosts to manage their personal information and activity on the platform.
+
+### 🏡 Property Management
+Allows hosts to create, update, retrieve, and delete property listings. It enables detailed property descriptions, pricing, and availability, forming the backbone of the platform's rental offerings.
+
+### 📅 Booking System
+Enables users to reserve properties, manage their bookings, and view check-in/check-out details. This feature coordinates availability and prevents double-booking, providing a seamless reservation experience.
+
+### 💳 Payment Processing
+Facilitates secure transactions between guests and hosts through booking payments. It ensures accurate payment records and integrates with third-party payment gateways for real-time processing.
+
+### 🌟 Review System
+Allows users to leave reviews and rate properties based on their experiences. This builds trust within the community by providing feedback to future renters and accountability for hosts.
+
+### 🚀 API Documentation
+Provides clear and comprehensive documentation for all backend APIs using the OpenAPI standard. This makes it easier for frontend developers and third parties to integrate with the backend services.
+
+### ⚡ Data Optimization
+Implements indexing and caching strategies to improve database performance and response time. It ensures the system scales effectively as more data and users are added.
+
+--- 
