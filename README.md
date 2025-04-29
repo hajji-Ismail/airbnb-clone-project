@@ -79,3 +79,18 @@ This backend serves as the foundation for a scalable booking platform that mirro
 - **CI/CD Pipelines**: Automated pipelines for testing and deploying code changes.
 
 ---
+## 👥 Team Roles
+
+### Backend Developer
+Responsible for designing and implementing the API endpoints, structuring database schemas, and coding the core business logic. Ensures that server-side functionalities are reliable, scalable, and well-integrated with the frontend.
+
+### Database Administrator (DBA)
+Manages the overall database architecture. This includes designing efficient schemas, implementing indexing strategies, maintaining data integrity, and optimizing query performance for high scalability.
+
+### DevOps Engineer
+In charge of deployment, monitoring, and continuous integration/continuous deployment (CI/CD) processes. Ensures backend services are scalable, highly available, and secure in production environments.
+
+### QA Engineer
+Focuses on validating backend features through rigorous testing (unit, integration, and end-to-end). Guarantees that all backend functionalities meet quality standards before deployment.
+
+---
