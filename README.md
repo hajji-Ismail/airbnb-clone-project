@@ -272,3 +272,18 @@ Key user actions and system events will be logged securely for auditing and debu
 Detailed error logging (without exposing sensitive information) will be implemented. **Why it's important:** Prevents leaking internal system logic to attackers while helping developers track issues.
 
 ---
+## 🚀 CI/CD Pipelines
+
+CI/CD (Continuous Integration and Continuous Deployment) pipelines automate the process of testing, building, and deploying code changes. They help ensure that new features, bug fixes, or updates are consistently tested and deployed with minimal manual effort.
+
+### Why CI/CD is Important
+- **Reliability:** Automatically runs tests to catch bugs before code reaches production.
+- **Speed:** Speeds up the deployment process by removing manual steps.
+- **Consistency:** Ensures the same process is followed every time code is pushed, reducing human error.
+
+### Tools Used
+- **GitHub Actions:** Automates workflows for running tests, linting, and deploying code when changes are pushed.
+- **Docker:** Creates consistent environments for development, testing, and deployment.
+- **Docker Compose (optional):** Helps manage multi-container environments during testing.
+
+---
