@@ -94,3 +94,128 @@ In charge of deployment, monitoring, and continuous integration/continuous deplo
 Focuses on validating backend features through rigorous testing (unit, integration, and end-to-end). Guarantees that all backend functionalities meet quality standards before deployment.
 
 ---
+## ⚙️ Technology Stack
+
+This project leverages a modern backend technology stack to ensure scalability, maintainability, and efficiency across development and production environments.
+
+### 🧱 Django
+A high-level Python web framework used for building the core of the backend application and exposing RESTful APIs with built-in admin and authentication features.
+
+### 🔌 Django REST Framework (DRF)
+An extension of Django that provides powerful and flexible tools for creating and managing RESTful APIs, including serialization, authentication, and viewsets.
+
+### 🗄️ PostgreSQL
+A robust, open-source relational database system used for storing structured data with support for complex queries, transactions, and indexing.
+
+### 🔎 GraphQL
+A query language and runtime for APIs that enables clients to request exactly the data they need, reducing over-fetching and improving API efficiency.
+
+### 🕒 Celery
+An asynchronous task queue used to handle background tasks such as sending emails, processing data, or managing scheduled jobs.
+
+### ⚡ Redis
+An in-memory key-value data store used primarily for caching, real-time session management, and as a message broker for Celery.
+
+### 🐳 Docker
+A containerization platform used to create consistent development and production environments, enabling easy deployment and environment isolation.
+
+### 🔁 CI/CD Pipelines
+Automated pipelines that test, build, and deploy code changes efficiently. Ensures continuous integration and delivery, improving development speed and code quality.
+
+--- 
+## 📊 Database Design
+
+The database design is centered around the core functionalities of the Airbnb Clone project. It ensures data consistency, efficiency, and support for all major features such as user management, property listings, bookings, payments, and reviews.
+
+### 🧑 Users
+Represents all platform users, including guests and hosts.
+
+**Key Fields:**
+- `id` (UUID): Unique identifier for each user.
+- `username` (string): User’s unique login name.
+- `email` (string): User’s email address.
+- `password_hash` (string): Securely stored hashed password.
+- `is_host` (boolean): Indicates if the user is a property host.
+
+**Relationships:**
+- A user can create multiple properties (if `is_host` is `true`).
+- A user can make multiple bookings.
+- A user can leave multiple reviews.
+
+---
+
+### 🏡 Properties
+Represents properties listed by hosts for rental.
+
+**Key Fields:**
+- `id` (UUID): Unique property identifier.
+- `title` (string): Name or short description of the property.
+- `description` (text): Detailed information about the property.
+- `location` (string): Address or city of the property.
+- `price_per_night` (decimal): Rental cost per night.
+
+**Relationships:**
+- A property belongs to one user (host).
+- A property can have many bookings.
+- A property can receive many reviews.
+
+---
+
+### 📅 Bookings
+Stores information about property reservations.
+
+**Key Fields:**
+- `id` (UUID): Unique booking identifier.
+- `user_id` (foreign key): ID of the user who made the booking.
+- `property_id` (foreign key): ID of the booked property.
+- `check_in` (date): Start date of the booking.
+- `check_out` (date): End date of the booking.
+
+**Relationships:**
+- A booking belongs to one user and one property.
+- A booking may be linked to one payment record.
+
+---
+
+### 💳 Payments
+Records transactions related to bookings.
+
+**Key Fields:**
+- `id` (UUID): Unique payment identifier.
+- `booking_id` (foreign key): Associated booking.
+- `amount` (decimal): Total payment amount.
+- `status` (string): Payment status (e.g., pending, completed).
+- `payment_date` (datetime): Timestamp of the transaction.
+
+**Relationships:**
+- Each payment is linked to a single booking.
+
+---
+
+### 🌟 Reviews
+Contains user-generated reviews and ratings for properties.
+
+**Key Fields:**
+- `id` (UUID): Unique review identifier.
+- `user_id` (foreign key): Reviewer (user).
+- `property_id` (foreign key): Reviewed property.
+- `rating` (integer): Rating score (e.g., 1 to 5).
+- `comment` (text): Review content.
+
+**Relationships:**
+- A user can leave many reviews.
+- A property can have many reviews.
+
+---
+
+
+### 🔗 Entity Relationships Summary
+
+- **User ↔ Properties**: One-to-Many (A host can list many properties)
+- **User ↔ Bookings**: One-to-Many (A user can make many bookings)
+- **User ↔ Reviews**: One-to-Many (A user can write many reviews)
+- **Property ↔ Bookings**: One-to-Many (A property can be booked many times)
+- **Property ↔ Reviews**: One-to-Many (A property can have many reviews)
+- **Booking ↔ Payment**: One-to-One (Each booking can have one payment)
+
+---
