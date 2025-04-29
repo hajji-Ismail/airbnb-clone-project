@@ -243,3 +243,32 @@ Provides clear and comprehensive documentation for all backend APIs using the Op
 Implements indexing and caching strategies to improve database performance and response time. It ensures the system scales effectively as more data and users are added.
 
 --- 
+## 🔐 Security Measures
+
+Security is a critical aspect of the backend system, especially when dealing with sensitive user data, financial transactions, and property listings. Below are the key security measures that will be implemented:
+
+### ✅ Authentication
+The system will implement secure user authentication using token-based methods (e.g., JWT). This ensures that only verified users can access their accounts and interact with the platform. **Why it's important:** Prevents unauthorized access and protects user credentials.
+
+### 🔒 Authorization
+Role-based access control (RBAC) will be applied to restrict access to resources based on user roles (e.g., host vs. guest). **Why it's important:** Ensures users can only perform actions allowed for their role, such as restricting property creation to hosts only.
+
+### 🛡️ Data Encryption
+Sensitive data like passwords and payment information will be encrypted using industry standards (e.g., hashing passwords with bcrypt, HTTPS for secure data transmission). **Why it's important:** Protects user data from being exposed or stolen during storage or transmission.
+
+### ⚠️ Rate Limiting
+APIs will be protected by rate limiting to prevent abuse, brute-force attacks, and DoS (Denial of Service) attempts. **Why it's important:** Maintains system stability and protects user accounts from automated attacks.
+
+### 📜 Input Validation & Sanitization
+All user inputs will be validated and sanitized to prevent SQL injection, cross-site scripting (XSS), and other injection attacks. **Why it's important:** Keeps the backend secure from malicious inputs that could compromise the database or frontend users.
+
+### 🔐 Secure Payment Processing
+Integration with trusted third-party payment providers (e.g., Stripe or PayPal) will be used for handling transactions. **Why it's important:** Ensures compliance with PCI standards and protects financial information.
+
+### 📈 Audit Logs
+Key user actions and system events will be logged securely for auditing and debugging purposes. **Why it's important:** Helps detect and investigate suspicious behavior and maintain accountability.
+
+### 🧯 Error Handling & Logging
+Detailed error logging (without exposing sensitive information) will be implemented. **Why it's important:** Prevents leaking internal system logic to attackers while helping developers track issues.
+
+---
